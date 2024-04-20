@@ -1,0 +1,39 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="h4 pb-2 mb-4 text-danger text-center border-bottoom border-danger my-3">Register</div>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-6 w-100">
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="pb-4">
+                    Username {{form.username}}
+                    {% if form.errors.username %}
+                    <label for="" class="form-label text-danger">{{form.errors}}</label>
+                    {% endif %}
+                </div>
+                <div class="pb-4">
+                    firstname {{form.first_name}}
+                </div>
+                <div class="pb-4">
+                    Lastname {{form.last_name}}
+                </div>
+                <div class="pb-4">
+                    email {{form.email}}
+                </div>
+                <div class="pb-4">
+                    password1 {{form.password1}}
+                </div>
+                <div class="pb-4">
+                    password2 {{form.password2}}
+                </div>
+                <button class= "btn btn-primary btn-sm" type="submit">Register</button>
+        
+            </form>
+
+        </div>
+    </div>
+</div>    
+{% endblock content %}

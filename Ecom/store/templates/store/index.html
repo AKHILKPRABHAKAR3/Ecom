@@ -1,0 +1,39 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}
+ECOM online shopping
+{% endblock title %}
+{% block content %}
+
+
+<!-- {% for i in data %}
+<div class="card" style="width: 18rem;">
+    <img src="{{i.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+    </div>
+  </div>
+{% endfor %} -->
+
+<div class="container mt-3">
+  <div class="h4 pb-2 mb-4 text-danger text-center border-bottom border-danger my-3">Categories</div>
+  <div class="row text-center ms-4">
+    {% for i in data %}
+      <div class="col-md-3">
+          <div class="card mb-4">
+            <a href="{% url 'products' i.id %}">
+              <img src="{{ i.image.url }}" class="card-img-top" alt="..." height="300px" width="400px">
+              <div class="card-body">
+                  <p class="card-text">{{i.name}}</p>
+                </a>
+              </div>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+    
+
+
+
